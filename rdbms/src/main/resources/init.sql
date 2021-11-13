@@ -2,10 +2,10 @@
 
 --changeset rrmasgutov:init
 
-create table account1
+create table account
 (
     id bigserial constraint account_pk primary key,
-    amount int,
+    amount int constraint positive_amount check (amount >= 0),
     version int
 );
 
